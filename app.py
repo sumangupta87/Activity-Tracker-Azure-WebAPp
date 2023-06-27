@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 #from flask_marshmallow import Marshmallow 
 import os
 from datetime import datetime
+import pytz
 
 
 # Init app
@@ -24,8 +25,8 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200), nullable=False) 
     content = db.Column(db.String(200), nullable=False)
-    date_created = db.Column(db.DateTime, default=datetime.now)
-    started = db.Column(db.DateTime, default = datetime.now)
+    date_created = db.Column(db.DateTime, default=datetime.now(pytz.timezone('Asia/Kolkata')))
+    started = db.Column(db.DateTime, default = datetime.now(pytz.timezone('Asia/Kolkata')))
     #duration = db.Column(db.Integer, default = 0 )
 
     def __repr__(self):
