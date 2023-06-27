@@ -1,2 +1,2 @@
 # StarkIndustries
-This is a Activity Tracker Web Api
+This is a Activity Tracker Web App
